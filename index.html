@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Biometric & Face Verification Attendance</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Attendance System</h1>
+
+        <div id="faceSection">
+            <video id="video" width="300" height="225" autoplay muted></video>
+            <p id="faceStatus">Loading face recognition...</p>
+            <button onclick="startFaceVerification()"><b>Verify Face</b></button>
+        </div>
+
+        <div id="biometricSection">
+            <button onclick="startFingerprintScan()"><b>Scan Fingerprint</b></button>
+            <p id="bioStatus">Waiting for fingerprint scan...</p>
+        </div>
+
+        <div id="attendanceSection">
+            <button onclick="markAttendance()" id="markBtn" disabled><b>Mark Attendance</b></button>
+            <p id="attendanceMessage"></p>
+        </div>
+
+        <h2>Attendance Records</h2>
+        <table id="attendanceTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th>Time</th>
+                </tr>
+                <tr>
+                    <th>    </th>
+                    <th>      </th>
+                    <th>    </th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>
